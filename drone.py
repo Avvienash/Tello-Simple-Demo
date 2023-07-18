@@ -14,6 +14,8 @@ import cv2
 from cvzone.HandTrackingModule import HandDetector  
 import os
 import datetime
+import pyttsx3
+import win32com.client
 
 
 
@@ -22,7 +24,7 @@ class Tello_Drone:
     
     def __init__(self):
         
-        #Setup
+        #TO Clear pott: netstat -ano | findstr :9000   
         command = 'netstat -ano | findstr :9000'
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         command = 'netstat -ano | findstr :8889'
@@ -30,7 +32,7 @@ class Tello_Drone:
         command = 'netstat -ano | findstr :11111'
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         
-        # TO Clear pott: netstat -ano | findstr :9000        
+        #Setup 
         self.tello_address = ('192.168.10.1', 8889)
         self.tello_state_address = ('192.168.10.1', 8890)
         
@@ -48,6 +50,7 @@ class Tello_Drone:
         self.fd_thread  = None
         self.d_thread = None
         self.gd_thread = None
+        self.sp_thread = None
         
         # FPS
         self.vs_thread_prev_time = 0
@@ -95,7 +98,31 @@ class Tello_Drone:
         # hand detector setup
         self.hand_detector = HandDetector(maxHands=1,detectionCon=0.85)
         
-    
+        #Speech Sythesis Setup
+        self.speaker = win32com.client.Dispatch("SAPI.SpVoice")
+        self.speech = ""
+        self.speaker.Rate = 0
+        self.speaker.Speak("Starting ")
+
+            
+    def speak(self):
+        
+        while self.ON:
+            
+            if self.speech == "":
+                time.sleep(0.1)
+                continue
+            
+            
+            temp = self.speech
+            self.speech = ""
+            self.speaker.Speak(temp)
+            self.speaker.Rate = 0
+            
+            
+            
+        
+
     # Function to send commands to Tello and receive responses
     def send_command(self,command):
         msg = command.encode(encoding="utf-8")
@@ -287,6 +314,13 @@ class Tello_Drone:
         self.ON = True
         self.display_text = "STARTING"
         
+        # Create and start the thread for speech synthesis
+        self.sp_thread = threading.Thread(target=self.speak)
+        self.sp_thread.daemon = True
+        self.sp_thread.start()
+        
+        
+        
          ## Connect to tello
         response = self.send_command("command")
         if response == "error":
@@ -297,6 +331,7 @@ class Tello_Drone:
         self.state_thread = threading.Thread(target=self.receive_tello_state)
         self.state_thread.daemon = True
         self.state_thread.start()
+        
         
         ## Connect to tello vs
         response = self.send_command("streamon")
@@ -312,6 +347,7 @@ class Tello_Drone:
         self.vs_thread.start()
         
         print("Wait for Video (10s)")
+        self.speech = "Waiting for Video"
         time.sleep(10)
         
         
@@ -338,13 +374,14 @@ class Tello_Drone:
             print("Low Battery. Abort")
             return False
         
-        
+        self.speech = "Taking off"
         response = self.send_command("takeoff")
         if response == "error":
             print("Exiting")
             return False
-               
-        response = self.send_command("up 100")
+        
+        self.speech = "getting to height"
+        response = self.send_command("up 10")
         if response == "error":
             print("Exiting")
             return False
@@ -448,6 +485,8 @@ class Tello_Drone:
                 else:
                     front_speed = 0
             
+            
+            
             case default:
                 print("ERROR: Invalid Mode")
                 up_speed = 0
@@ -463,12 +502,10 @@ class Tello_Drone:
     def control(self,mode):
         
         try:
-            
-                              
-            
             time_start_gesture = time.time()
 
-                        
+            
+            self.speech = "Ready"            
             while True:
                                
                 (side_speed, front_speed, up_speed, yaw_speed) = self.get_speed(mode)
@@ -476,10 +513,6 @@ class Tello_Drone:
                 if self.STATE['h'] > 190 or self.STATE['h'] < 30 :
                     up_speed = 0
 
-                    
-
-                
-                
                 # Hand Commands:
                 match self.fingerup:
                     
@@ -488,9 +521,12 @@ class Tello_Drone:
                         self.display_text = text
                         up_speed = 0
                         yaw_speed= 0
+                        self.speaker.Rate = 8
+                        self.speech = str(6 - round(time.time() -time_start_gesture) )
                         
                         if (time.time() -time_start_gesture)> 5 :
                             self.display_text = "FLIP NOW"
+                            self.speech = "Flip"
                             self.send_command("stop")
                             time.sleep(1)
                             self.send_command("flip f")
@@ -503,9 +539,12 @@ class Tello_Drone:
                         self.display_text = text
                         up_speed = 0
                         yaw_speed= 0
+                        self.speaker.Rate = 8
+                        self.speech = str(3 - round(time.time() -time_start_gesture) )
                         
                         if (time.time() -time_start_gesture)> 2:
                             self.display_text = "SPIN NOW"
+                            self.speech = "Spining 360 degrees"
                             self.send_command("stop")
                             time.sleep(1)
                             self.send_command("cw 360")
@@ -518,9 +557,12 @@ class Tello_Drone:
                         self.display_text = text
                         up_speed = 0
                         yaw_speed= 0
+                        self.speaker.Rate = 8
+                        self.speech = str(3 - round(time.time() -time_start_gesture) )
                         
                         if (time.time() -time_start_gesture)> 2 :
                             self.display_text = "SMILE"
+                            self.speech = "Picture"
                             self.send_command("stop")
                             # Generate a unique filename using current timestamp
                             timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
@@ -540,6 +582,7 @@ class Tello_Drone:
                         if (time.time() -time_start_gesture)> 0.4 :
                             self.display_text = "STOP"
                             time_start_gesture = time.time()
+                            self.speech = "Stop"
                             break
                     
                     case default:
@@ -566,6 +609,8 @@ class Tello_Drone:
 
     def end(self):
         
+        
+        self.speaker.Speak("Mission Complete")
         self.ON = False
         print("Joining state thread...")
         self.state_thread.join()
@@ -575,6 +620,8 @@ class Tello_Drone:
         self.fd_thread.join()
         print("Joining draw thread...")
         self.d_thread.join()
+        print("Joining speech thread...")
+        self.sp_thread.join()
         
         print("Closing socket...")
         self.sock.close()

@@ -1,0 +1,288 @@
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+land: ok
+Joining state thread...
+Joining video stream thread...
+Joining face detector thread...
+Joining draw thread...
+Closing socket...
+Closing state socket...
+Closing OpenCV windows...
+battery level:
+83
+PS C:\Users\Avvienash\Documents\GitHub\Tello-Simple-Demo> & C:/Users/Avvienash/AppData/Local/Programs/Python/Python310/python.exe c:/Users/Avvienash/Documents/GitHub/Tello-Simple-Demo/drone.py
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+a
+command: ok
+streamon: ok
+Start VS Thread
+Wait for Video (10s)
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+non-existing PPS 0 referenced
+non-existing PPS 0 referenced
+decode_slice_header error
+no frame!
+Start Face Detecting Thread
+Start Hand Detecting Thread
+Start Draw Thread
+78
+left block unavailable for requested intra mode
+error while decoding MB 0 11, bytestream 3217
+takeoff: ok
+error while decoding MB 36 38, bytestream -6
+up 100: ok
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+rc 0 0 0 0
+land: ok
+Joining state thread...
+Joining video stream thread...
+Joining face detector thread...
+Joining draw thread...
+Closing socket...
+Closing state socket...
+Closing OpenCV windows...
+battery level:
+78
