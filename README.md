@@ -4,7 +4,7 @@ This repository contains a Python script that demonstrates the control of a DJI 
 
 ## Demo Video
 
-Check out the [demo video](https://drive.google.com/file/d/1o8rvijhsd_hw8CKdTECEOsUZCuoFWW5u/view?usp=sharing) to see the Tello drone control using hand gestures and facial detection.
+Check out the [demo video](https://youtu.be/lXKtBHf08Sc) to see the Tello drone control using hand gestures and facial detection.
 
 ## Overview of Components and Functionalities
 
