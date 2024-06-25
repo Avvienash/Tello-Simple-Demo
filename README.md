@@ -6,6 +6,21 @@ This repository contains a Python script that demonstrates the control of a DJI 
 
 Check out the [demo video](https://youtu.be/lXKtBHf08Sc) to see the Tello drone control using hand gestures and facial detection.
 
+### Modes of Control
+
+- **Mode 1: Yaw** - Controls drone yaw based on face position and adjusts height dynamically.
+- **Mode 2: Yaw_Y** - Adjusts drone yaw based on face position and maintains eye-level height.
+- **Mode 3: XY** - Controls drone movement in XY plane based on face position without adjusting yaw.
+- **Mode 4: Yaw_XY** - Controls both drone yaw and movement in the XY plane based on face position.
+- **Mode 5: Yaw_YZ** - Controls drone yaw and adjusts height and depth based on face position.
+- **Mode 6: Hand Follow** - Uses hand gestures instead of face detection. Open hand controls XYZ movement; closed fist controls yaw.
+
+### Extra Features (All Modes):
+
+- **1 finger** - Emergency Stop.
+- **2 fingers (peace sign)** - Takes a snapshot (selfie).
+- **3 fingers** - Executes a 360-degree yaw spin.
+- **4 fingers** - Performs a vertical flip maneuver.
 
 https://github.com/Avvienash/Tello-Simple-Demo/assets/66234703/c606ea9c-8c9f-47f9-93d6-5e3dd65b29a0
 
